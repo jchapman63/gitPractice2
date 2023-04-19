@@ -1,0 +1,16 @@
+#!/bin/bash
+
+if [ $# -ne 1 ]; then
+        echo "Please provide one argument"
+        exit 1
+else
+        if [ -d "$1" ]; then
+                count=$(find "$1" -mindepth 1 -maxdepth 1 | wc -w)
+                echo "The directory $1 contains $count files/directories."
+
+        elif [ -f "$1" ]; then
+                owner=$(ls -l "$1" | awk '{print $3}')
+                echo "The file $1 is owned by $owner."
+        fi
+fi
+

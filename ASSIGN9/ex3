@@ -1,0 +1,17 @@
+#!/bin/bash
+
+if [[ $# -eq 1 ]]; then
+secret="$1"
+else
+echo "you must have an arg"
+exit 0
+fi
+
+while true; do
+read -p  "enter a name: " argument
+
+if [[ "$secret" = "$argument" ]]; then
+exit 0
+fi
+done
+# the secret name was supposed to be stored as a variabl

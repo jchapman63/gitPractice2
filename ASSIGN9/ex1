@@ -1,0 +1,34 @@
+#!/bin/bash
+
+while true; do
+echo "Choose option:"
+echo "D or d: print out date"
+echo "U or u: print out online usernames"
+echo "W or w: print out working directory"
+echo "L or l: list all files under current directory"
+echo "q or Q: quit the program"
+
+read -p "choose an option: " option
+
+case $option in
+d|D)
+date
+;;
+u|U)
+who
+;;
+w|W)
+pwd
+;;
+l|L)
+ls
+;;
+q|Q)
+echo "Done"
+exit 0
+;;
+
+esac
+done
+
+

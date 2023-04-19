@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# check for command line args
+if [[ $# -eq 2 ]]; then
+file1="$1"
+file2="$2"
+else
+read -p "Enter first file: " file1
+read -p "Enter Second file: " file2
+fi
+
+if [[ -f "$file1" && -f "$file2" ]]; then
+perm1=$(chmod "$file1")
+perm2=$(chmod "$file2")
+
+if [[ "$perm1" == "$perm2" ]]; then
+echo "same  permissions"
+else
+echo "differing permissions"
+
+fi
+else
+echo "non regular files"
+fi
+

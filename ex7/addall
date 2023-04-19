@@ -1,0 +1,24 @@
+#!/bin/bash
+
+if [[ $# -eq 0 ]]
+then
+	echo "Please provide arguments"
+	exit 1
+else
+	end=$#
+
+	start=0
+
+	total=0
+
+	while [ true ]
+		do
+			total=$((total+$1))
+			shift
+			start=$((start+1))
+			if [[ $start == $end ]]; then
+				break
+			fi
+		done
+	echo "total: $total"	
+fi

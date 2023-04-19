@@ -1,0 +1,5 @@
+#!/bin/bash
+
+read -p "input a string: " name
+
+echo "$name" | cat > $USER.name

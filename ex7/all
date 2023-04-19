@@ -1,0 +1,18 @@
+#!/bin/bash
+
+if [[ $# -lt 3 ]]; then
+echo "you must provide an argument"
+exit 1
+fi
+
+caller=$(basename "$0")
+
+arg1="$1"
+arg2="$2"
+arg3="$3"
+
+echo "The script called was $caller"
+echo "The first argument was $arg1"
+echo "The second argument was $arg2"
+echo "the third argument was $arg3"
+
